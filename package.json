@@ -1,9 +1,8 @@
 {
-  "name": "node.js-(projet-tweeter)",
   "version": "1.0.0",
-  "description": "",
-  "main": "Controler.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +11,6 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^3.0.3"
-  }
+  },
+  "description": ""
 }
