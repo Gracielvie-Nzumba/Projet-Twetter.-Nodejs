@@ -1,13 +1,13 @@
 const express = require('express');
 const port = 3000;
-const tweetsController = require('./tweetsController');
+// const tweetsController = require('./tweetsController');
 const app = express();
 
 app.get('/', (req, res) => {
   res.send('Bienvenue sur notre Site !');
 });
 
-app.use(express.json());
+// app.use(express.json());
 app.use('/tweets', tweetsController);
 
 
