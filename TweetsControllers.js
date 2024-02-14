@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+// const express = require('express');
+// const router = express.Router();
 
 // router.post('/', (req, res) => {
 //   const { content } = req.body;
@@ -15,32 +15,32 @@ const router = express.Router();
 //   res.status(200).json(tweets);
 // });
 
-const getAllTweets =(req,res) => {
-  res.send(tweets);
-}
+// const getAllTweets =(req,res) => {
+//   res.send(tweets);
+// }
 
-const postTweet =(req,res)=>{
-  res.send(newTweet)
-}
-const getAllTweetById=(req,res)=>{
-  res.send(tweet)
-}
-const updateTweet =(req,res)=>{
-  const tweetId=req.params.Id
-  res.send(updateTweet)
-}
-const deleteTweet=(req,res)=>{
-  const tweetId=req.params.Id
-  res.send();
-}
+// const postTweet =(req,res)=>{
+//   res.send(newTweet)
+// }
+// const getAllTweetById=(req,res)=>{
+//   res.send(tweet)
+// }
+// const updateTweet =(req,res)=>{
+//   const tweetId=req.params.Id
+//   res.send(updateTweet)
+// }
+// const deleteTweet=(req,res)=>{
+//   const tweetId=req.params.Id
+//   res.send();
+// }
 
-module.exports = {
-  getAllTweets,
-  postTweet,
-  getAllTweetById,
-  updateTweet,
-  deleteTweet,
-};
+// module.exports = {
+//   getAllTweets,
+//   postTweet,
+//   getAllTweetById,
+//   updateTweet,
+//   deleteTweet,
+// };
 
 
 
