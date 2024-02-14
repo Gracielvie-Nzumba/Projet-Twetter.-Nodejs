@@ -1,21 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const controllers = require('../controllers/controllers');
-const { getAll } = require('./Controllers');
+const tweetsController = require('./tweetsController');
 
-router.get("", getAll)
-
-router.get('/:id',(req,res){
-    res.send("Bienvenu sur notre page" + req.params.id)
-
-});
-
-router.post('', controllers.create);
-
-router.put('/:id', controllers.update);
-
-router.delete('/:id', controllers.remove){
-    res.send("message supprimé")
-};
+router.get('/tweets', tweetsController.getAllTweets);
+router.post('/tweets', tweetsController.createTweet);
+router.get('/tweets/:id', tweetsController.getTweetById);
+router.put('/tweets/:id', tweetsController.updateTweet);
+router.delete('/tweets/:id', tweetsController.deleteTweet);
 
 module.exports = router;
