@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { authenticate } = require('passport');
+const { authentificate } = require('passport');
 const port = 3000;
 const app = express();
 
