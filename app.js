@@ -76,7 +76,7 @@ app.post('/login', (req, res) => {
   const user = users.find((user) => user.username === username);
   if (!user || !bcrypt.compareSync(password, user.password)) {
     return res
-      .statuts(401)
+      .status(401)
       .json('utilisateur non défini ou Mot de passe invalide');
   }
 
@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
   res.json({ token });
 });
 
-function authetificate(req, res, next) {
+function authentificate(req, res, next) {
   const token = req.headers.authorisation;
   if (!token) {
     return res.status(401).json({ message: 'Token manquant' });
@@ -99,7 +99,7 @@ function authetificate(req, res, next) {
   })
 }
 
-app.get('/protected', authenticate,(req,res) =>{
+app.get('/protected', authentificate,(req,res) =>{
   res.json({message: 'Accès autorisé'})
 });
 
