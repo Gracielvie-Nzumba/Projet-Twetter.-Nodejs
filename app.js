@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { authenticate } = require('passport');
+const { authentificate } = require('passport');
 const port = 3000;
 const app = express();
 
@@ -76,7 +76,7 @@ app.post('/login', (req, res) => {
   const user = users.find((user) => user.username === username);
   if (!user || !bcrypt.compareSync(password, user.password)) {
     return res
-      .statuts(401)
+      .status(401)
       .json('utilisateur non défini ou Mot de passe invalide');
   }
 
@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
   res.json({ token });
 });
 
-function authetificate(req, res, next) {
+function authenticate(req, res, next) {
   const token = req.headers.authorisation;
   if (!token) {
     return res.status(401).json({ message: 'Token manquant' });
