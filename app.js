@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
   res.json({ token });
 });
 
-function authentificate(req, res, next) {
+function authenticate(req, res, next) {
   const token = req.headers.authorisation;
   if (!token) {
     return res.status(401).json({ message: 'Token manquant' });
@@ -99,7 +99,7 @@ function authentificate(req, res, next) {
   })
 }
 
-app.get('/protected', authentificate,(req,res) =>{
+app.get('/protected', authenticate,(req,res) =>{
   res.json({message: 'Accès autorisé'})
 });
 
