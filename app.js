@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { authentificate } = require('passport');
+// const { authentificate } = require('passport');
 const port = 3000;
 const app = express();
 
@@ -84,7 +84,7 @@ app.post('/login', (req, res) => {
   res.json({ token });
 });
 
-function authenticate(req, res, next) {
+function authMiddleware(req, res, next) {
   const token = req.headers.authorisation;
   if (!token) {
     return res.status(401).json({ message: 'Token manquant' });
@@ -99,7 +99,7 @@ function authenticate(req, res, next) {
   })
 }
 
-app.get('/protected', authenticate,(req,res) =>{
+app.get('/protected', authMiddleware,(req,res) =>{
   res.json({message: 'Accès autorisé'})
 });
 
